@@ -442,6 +442,7 @@ body {
 
 .about-content .text{
   flex-basis: calc(100% - 450px);
+  position: relative;
 }
 
 .about-content .text p:first-of-type{
@@ -450,11 +451,29 @@ body {
   margin-bottom: 34px;
 }
 
-.about-content .text hr{
-  width: 50%;
-  display: inline-block;
-  border-color: var(--mainColor);
+@media (min-width:1200px){
+  .about-content .text p:first-of-type::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height:1.5px;
+    background-color:var(--mainColor);
+    top: 35%;
+    left:25%;
+  }
 }
+@media (max-width:1199px){
+  .about-content .text p:first-of-type::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height:1.5px;
+    background-color:var(--mainColor);
+    top: 50%;
+    left:25%;
+  }
+}
+
 
 
 .about-content .text p:last-of-type{
